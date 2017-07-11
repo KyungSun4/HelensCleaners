@@ -73,3 +73,9 @@ a {
   font-size: inherit;
   font-style: inherit;
 }
+.button {
+  background-color: #57C4FF;
+  padding: 10px;
+  border-radius: 3px;
+  color: white;
+}
