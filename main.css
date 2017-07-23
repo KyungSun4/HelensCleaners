@@ -16,16 +16,39 @@ h1 {
   font-family: 'Lobster', cursive;
   font-size: 45px;
   margin-bottom: 10px;
+  margin-top: 0;
+  padding-top: 30px;
+  animation: slide 2s linear normal 1;
+  animation-fill-mode: forwards;
+  animation-delay: 3s;
+  width: 0;
+  overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+  white-space: nowrap;
+}
+@keyframes slide {
+  to {
+    width:100%;
+  }
 }
 h2 {
   text-align: center;
-
   font-family: 'Asap', sans-serif;
 }
 h6 {
   text-align: center;
   margin: 0;
   padding-bottom: 10px;
+  opacity: 0;
+  animation: fadeIn 1s normal forwards;
+  animation-delay: 3.9s;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
 }
 footer {
   text-align: center;
@@ -37,6 +60,18 @@ a {
 .mainImg {
   width: 100%;
   position: relative;
+  -webkit-filter: blur(20px);
+  /* Safari */
+  filter: blur(20px);
+  animation: unBlur 2s normal forwards;
+  animation-delay: 3s;
+}
+@keyframes unBlur {
+  to {
+    -webkit-filter: blur(0px);
+    /* Safari */
+    filter: blur(0px);
+  }
 }
 .over {
   color: white;
@@ -47,7 +82,20 @@ a {
   width: 100%;
   z-index: 2;
   font-size: 4vw;
+  animation: rise 1s reverse forwards;
+  transform: translateY(100vh);
+  animation-delay: 3.9s;
 }
+
+@keyframes rise {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(100vh);
+  }
+}
+
 .flex {
   display: flex;
 }
@@ -86,4 +134,34 @@ a {
 .button:hover {
   background-color: #57C4FF;
   color: white;
+}
+
+.hanger {
+  position: fixed;
+  z-index: 31;
+  display: block;
+  margin: 37vh 40vw;
+  width: 20vw;
+  animation: hide .2s linear normal 1;
+  animation-fill-mode: forwards;
+  animation-delay: 2.5s;
+}
+#loadBack {
+  background-color: white;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  margin-top: 0;
+  padding-top: 0;
+  z-index: 30;
+  animation: hide 1s ease-in normal 1;
+  animation-fill-mode: forwards;
+  animation-delay: 2.5s;
+}
+
+@keyframes hide {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
 }
